@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Stock Search</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/styles.css') }}"
+		/>
+
+		<script src="https://code.highcharts.com/stock/highstock.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+	</head>
+	<body>
+		<div class="search">
+			<h2>Stock Search</h2>
+			<form id="base-form">
+				<span class="enter">Enter Stock Ticker Symbol</span>
+				<span class="asterisk">*</span>
+				<input name="keyword" id="text" required />
+
+				<br />
+
+				<button class="search-button" id="search">Search</button>
+				<button class="clear-button" id="clear">Clear</button>
+			</form>
+		</div>
+
+		<div class="line"></div>
+
+		<div class="error" id="error">
+			Error: No record has been found, please enter a valid symbol.
+		</div>
+
+		<ul id="nav">
+			<li><span id="company" tabindex="1">Company Outlook</span></li>
+			<li><span id="stock" tabindex="1">Stock Summary</span></li>
+			<li><span id="charts" tabindex="1">Charts</span></li>
+			<li><span id="news" tabindex="1">Latest News</span></li>
+		</ul>
+
+		<div id="content"></div>
+
+		<script
+			type="text/javascript"
+			src="{{ url_for('static', filename='js/application.js') }}"
+		></script>
+	</body>
+</html>
